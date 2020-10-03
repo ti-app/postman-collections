@@ -360,7 +360,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group?lat=11.509787286789653&lng=79.81593704223631&radius=500000&health=healthy,adequate,average,weak,almostDead",
+							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group?lat={{testLat}}&lng={{testLng}}&radius=50000&health=healthy,adequate,average,weak,almostDead",
 							"host": [
 								"{{BASE_URL}}"
 							],
@@ -371,15 +371,15 @@
 							"query": [
 								{
 									"key": "lat",
-									"value": "11.509787286789653"
+									"value": "{{testLat}}"
 								},
 								{
 									"key": "lng",
-									"value": "79.81593704223631"
+									"value": "{{testLng}}"
 								},
 								{
 									"key": "radius",
-									"value": "500000"
+									"value": "50000"
 								},
 								{
 									"key": "health",
@@ -502,27 +502,9 @@
 									"type": "text"
 								},
 								{
-									"key": "lat",
-									"value": "{{testLat}}",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "lng",
-									"value": "{{testLng}}",
-									"type": "text",
-									"disabled": true
-								},
-								{
 									"key": "photo",
 									"type": "file",
 									"src": []
-								},
-								{
-									"key": "plants",
-									"value": "3",
-									"type": "text",
-									"disabled": true
 								},
 								{
 									"key": "distribution",
@@ -531,7 +513,7 @@
 								},
 								{
 									"key": "trees",
-									"value": "[{\"lat\":12,\"lng\":18}]",
+									"value": "[{\"lat\":{{testLat}},\"lng\":{{testLng}}}]",
 									"type": "text"
 								},
 								{
@@ -968,7 +950,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\":\"nonmoderator@gmail.com\",\n    \"password\":\"password\",\n    \"returnSecureToken\":true\n}"
+					"raw": "{\n    \"email\":\"{{FIREBASE_USERNAME}}\",\n    \"password\":\"{{FIREBASE_PASSWORD}}\",\n    \"returnSecureToken\":true\n}"
 				},
 				"url": {
 					"raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{FIREBASE_API_KEY}}",
@@ -1072,7 +1054,7 @@
 	],
 	"variable": [
 		{
-			"id": "f516c7fe-8cc5-4498-b790-400c8c137b2a",
+			"id": "17e961aa-0a7e-4e07-99d4-2ecea943bb4e",
 			"key": "ID_TOKEN",
 			"value": ""
 		}
