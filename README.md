@@ -8,7 +8,7 @@ exported from the Postman UI. Similarly `example.env.json` file has all the envi
 which are used in the REST APIs defined in `collections.json`.
 
 ## How to sync and export
-General rule to follow to use this repository is to at a time work on the json configuration in the repoistory or work in the UI directly.
+General rule to follow is, at a time either work with the files in the repository directly and export the updated file in Postman or do the changes in postman and import the updated configuration in this repository.
 When you want to change something in the file, do those changes directly in the file and then export the collection in Postman UI. You can rename the old collection as a backup collection and work on this newly imported one.
 When you want to make changes in the postman collection from the UI, make sure those changes are then imported in the `collection.json` file manually without changing the file name. This applies for example env file too.
 Always double check for secrets/password/confidential information being imported in the repository. Try to redact it wherever possible and keep the confidential information in the environment variable. You'll have to manually download the updated json file for environment, redact sensitive info and replace it with the `example.env.json` file.
