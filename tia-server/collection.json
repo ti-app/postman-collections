@@ -535,6 +535,59 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Water Multiple Tree Groups",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"treeGroups\": [\n        {\n            \"id\": \"5e1207621f4ff0003961e5b6\"\n        },\n        {\n            \"id\": \"5e12045d1f4ff0003961e5a9\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group/water",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"{{VERSION}}",
+								"tree_group",
+								"water"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tree Group Clusters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group/cluster?bbox=73.625379,18.388787,74.027583,18.710622",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"{{VERSION}}",
+								"tree_group",
+								"cluster"
+							],
+							"query": [
+								{
+									"key": "bbox",
+									"value": "73.625379,18.388787,74.027583,18.710622"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -1054,7 +1107,7 @@
 	],
 	"variable": [
 		{
-			"id": "17e961aa-0a7e-4e07-99d4-2ecea943bb4e",
+			"id": "4a44d88d-ffcd-4e8b-b36e-b29b69648e7e",
 			"key": "ID_TOKEN",
 			"value": ""
 		}
