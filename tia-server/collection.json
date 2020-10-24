@@ -1,1116 +1,1039 @@
 {
-	"info": {
-		"_postman_id": "391b9469-c943-41aa-b358-c84890a83bb5",
-		"name": "tia-server",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Tree",
-			"item": [
-				{
-					"name": "Water a Tree",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree/5d17525699e2a500175a3c41/water",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree",
-								"5d17525699e2a500175a3c41",
-								"water"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update A Tree",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "health",
-									"value": "healthy",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree/5dbf21a09c75a97046d502fb",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree",
-								"5dbf21a09c75a97046d502fb"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete tree",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree/5d118dfb99e2a500175a3aed",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree",
-								"5d118dfb99e2a500175a3aed"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Tree Mod Action",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"deleteApprove\": true}"
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree/5d62a4561b3221043e6ecb09/mod-action",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree",
-								"5d62a4561b3221043e6ecb09",
-								"mod-action"
-							]
-						},
-						"description": "Tree delete moderator action"
-					},
-					"response": []
-				},
-				{
-					"name": "Tree Activity",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree/5d9d53b8edccbd00173ea28b/activity",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree",
-								"5d9d53b8edccbd00173ea28b",
-								"activity"
-							]
-						},
-						"description": "API request to get tree activities"
-					},
-					"response": []
-				}
-			],
-			"description": "### Tree APIs",
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Role",
-			"item": [
-				{
-					"name": "Add Role",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/authorization/role",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"authorization",
-								"role"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove Role",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"email\":\"akshay.milmile@gmail.com\"\n}"
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/authorization/role",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"authorization",
-								"role"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Moderators",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/authorization/mods",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"authorization",
-								"mods"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Tree Group",
-			"item": [
-				{
-					"name": "Create A Tree Group",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "multipart/form-data",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "health",
-									"value": "healthy",
-									"type": "text"
-								},
-								{
-									"key": "lat",
-									"value": "{{testLat}}",
-									"type": "text"
-								},
-								{
-									"key": "lng",
-									"value": "{{testLng}}",
-									"type": "text"
-								},
-								{
-									"key": "photo",
-									"type": "file",
-									"src": []
-								},
-								{
-									"key": "plants",
-									"value": "1",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree_group"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Tree Groups",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "697f318e-c9a6-4659-8320-c5a76a8852e3",
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group?lat={{testLat}}&lng={{testLng}}&radius=50000&health=healthy,adequate,average,weak,almostDead",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree_group"
-							],
-							"query": [
-								{
-									"key": "lat",
-									"value": "{{testLat}}"
-								},
-								{
-									"key": "lng",
-									"value": "{{testLng}}"
-								},
-								{
-									"key": "radius",
-									"value": "50000"
-								},
-								{
-									"key": "health",
-									"value": "healthy,adequate,average,weak,almostDead"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Tree Group Mod Action",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"deleteApprove\": true\n}"
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group/5d7ec1c83dd6e4fa8c3842ee/mod-action",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree_group",
-								"5d7ec1c83dd6e4fa8c3842ee",
-								"mod-action"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Tree Group",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group/5d7ec1c83dd6e4fa8c3842ee",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree_group",
-								"5d7ec1c83dd6e4fa8c3842ee"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Water Tree Group",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group/5d7ec1c83dd6e4fa8c3842ee/water",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree_group",
-								"5d7ec1c83dd6e4fa8c3842ee",
-								"water"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Create A Tree Group [Distribution]",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "multipart/form-data",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "health",
-									"value": "healthy",
-									"type": "text"
-								},
-								{
-									"key": "photo",
-									"type": "file",
-									"src": []
-								},
-								{
-									"key": "distribution",
-									"value": "single",
-									"type": "text"
-								},
-								{
-									"key": "trees",
-									"value": "[{\"lat\":{{testLat}},\"lng\":{{testLng}}}]",
-									"type": "text"
-								},
-								{
-									"key": "waterCycle",
-									"value": "7",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree_group"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Water Multiple Tree Groups",
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"treeGroups\": [\n        {\n            \"id\": \"5e1207621f4ff0003961e5b6\"\n        },\n        {\n            \"id\": \"5e12045d1f4ff0003961e5a9\"\n        }\n    ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group/water",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree_group",
-								"water"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Tree Group Clusters",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/tree_group/cluster?bbox=73.625379,18.388787,74.027583,18.710622",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"tree_group",
-								"cluster"
-							],
-							"query": [
-								{
-									"key": "bbox",
-									"value": "73.625379,18.388787,74.027583,18.710622"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Site",
-			"item": [
-				{
-					"name": "Create A Site",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "type",
-									"value": "public",
-									"type": "text"
-								},
-								{
-									"key": "wateringNearBy",
-									"value": "true",
-									"type": "text"
-								},
-								{
-									"key": "numberOfPlants",
-									"value": "10",
-									"type": "text"
-								},
-								{
-									"key": "soilQuality",
-									"value": "good",
-									"type": "text"
-								},
-								{
-									"key": "lat",
-									"value": "{{testLat}}",
-									"type": "text"
-								},
-								{
-									"key": "lng",
-									"value": "{{testLng}}",
-									"type": "text"
-								},
-								{
-									"key": "siteDisplayName",
-									"value": "mandir ke baju",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/site",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"site"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Sites",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "text/plain",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/site?lat={{testLat}}&lng={{testLng}}&radius=500",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"site"
-							],
-							"query": [
-								{
-									"key": "lat",
-									"value": "{{testLat}}"
-								},
-								{
-									"key": "lng",
-									"value": "{{testLng}}"
-								},
-								{
-									"key": "radius",
-									"value": "500"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Site",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/site/5d8f36f56cee7f038bb16fa8",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"site",
-								"5d8f36f56cee7f038bb16fa8"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Site delete moderator action",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"deleteApprove\": true}"
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/site/5d8f36f56cee7f038bb16fa8/mod-action",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"site",
-								"5d8f36f56cee7f038bb16fa8",
-								"mod-action"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update A Site",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "type",
-									"value": "public",
-									"type": "text"
-								},
-								{
-									"key": "wateringNearBy",
-									"value": "true",
-									"type": "text"
-								},
-								{
-									"key": "numberOfPlants",
-									"value": "10",
-									"type": "text"
-								},
-								{
-									"key": "soilQuality",
-									"value": "good",
-									"type": "text"
-								},
-								{
-									"key": "lat",
-									"value": "{{testLat}}",
-									"type": "text"
-								},
-								{
-									"key": "lng",
-									"value": "{{testLng}}",
-									"type": "text"
-								},
-								{
-									"key": "siteDisplayName",
-									"value": "non moderator site  to be updated",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/site/5dc00bcbb0b8807eb98bc99a",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"site",
-								"5dc00bcbb0b8807eb98bc99a"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "User",
-			"item": [
-				{
-					"name": "User Activity",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/user/jBBPAbf73AOFdvXXC4NU6BVhoOD2/activity",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"user",
-								"jBBPAbf73AOFdvXXC4NU6BVhoOD2",
-								"activity"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Register FCM Token",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"fcmToken\":\"averylongfcmtokenofaregistreduserandhisdevice\"\n}"
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/user/notification/register",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"user",
-								"notification",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Deregister FCM Token",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"fcmToken\":\"averylongfcmtokenofaregistreduserandhisdevice\"\n}"
-						},
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/user/notification/deregister",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"user",
-								"notification",
-								"deregister"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Top Users",
-			"item": [
-				{
-					"name": "Top Users",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "x-id-token",
-								"value": "{{ID_TOKEN}}"
-							}
-						],
-						"url": {
-							"raw": "{{BASE_URL}}/{{VERSION}}/top-users?limit=10",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"{{VERSION}}",
-								"top-users"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "10"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Get Token",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\":\"{{FIREBASE_USERNAME}}\",\n    \"password\":\"{{FIREBASE_PASSWORD}}\",\n    \"returnSecureToken\":true\n}"
-				},
-				"url": {
-					"raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{FIREBASE_API_KEY}}",
-					"protocol": "https",
-					"host": [
-						"www",
-						"googleapis",
-						"com"
-					],
-					"path": [
-						"identitytoolkit",
-						"v3",
-						"relyingparty",
-						"verifyPassword"
-					],
-					"query": [
-						{
-							"key": "key",
-							"value": "{{FIREBASE_API_KEY}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Status",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "[ALL DEVICES] Send a test notification",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{BASE_URL}}/{{VERSION}}/notify",
-					"host": [
-						"{{BASE_URL}}"
-					],
-					"path": [
-						"{{VERSION}}",
-						"notify"
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"id": "8ce665ec-72b2-4d07-b725-6ad8e7e4ffe0",
-				"type": "text/javascript",
-				"exec": [
-					"pm.sendRequest({",
-					"    url: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + pm.variables.get(\"FIREBASE_API_KEY\"),",
-					"    method: 'POST',",
-					"    crossDomin: true,",
-					"    header:{",
-					"    \"Content-Type\": \"application/json\",",
-					"    \"Accept\": \"application/json\",",
-					"    \"cache-control\": \"no-cache\",",
-					"    \"Postman-Token\": \"7ae945b9-b429-4db7-859c-cf2da210deaf\"",
-					"    },",
-					"    body: {",
-					"        mode: 'raw',",
-					"        raw: JSON.stringify({",
-					"    \"email\":pm.variables.get(\"FIREBASE_USERNAME\"),",
-					"    \"password\":pm.variables.get(\"FIREBASE_PASSWORD\"),",
-					"    \"returnSecureToken\":true",
-					"})",
-					"    }",
-					"}, function (err, res) {",
-					"    console.log(res.json());",
-					"    const data = res.json();",
-					"    pm.variables.set(\"ID_TOKEN\", data.idToken);",
-					"    pm.request.headers.upsert({key:\"x-id-token\",value:data.idToken});",
-					"});",
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"id": "4af964e5-78cf-46f0-ac78-93d53cd3ab32",
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"id": "4a44d88d-ffcd-4e8b-b36e-b29b69648e7e",
-			"key": "ID_TOKEN",
-			"value": ""
-		}
-	],
-	"protocolProfileBehavior": {}
+  "info": {
+    "_postman_id": "ec058019-815f-4475-b139-3a0ac75ec0a0",
+    "name": "tia-server",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Tree",
+      "item": [
+        {
+          "name": "Water a Tree",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree/5d17525699e2a500175a3c41/water",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "{{VERSION}}",
+                "tree",
+                "5d17525699e2a500175a3c41",
+                "water"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update A Tree",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "health",
+                  "value": "healthy",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree/5dbf21a09c75a97046d502fb",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "tree", "5dbf21a09c75a97046d502fb"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete tree",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree/5d118dfb99e2a500175a3aed",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "tree", "5d118dfb99e2a500175a3aed"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tree Mod Action",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"deleteApprove\": true}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree/5d62a4561b3221043e6ecb09/mod-action",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "{{VERSION}}",
+                "tree",
+                "5d62a4561b3221043e6ecb09",
+                "mod-action"
+              ]
+            },
+            "description": "Tree delete moderator action"
+          },
+          "response": []
+        },
+        {
+          "name": "Tree Activity",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree/5d9d53b8edccbd00173ea28b/activity",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "{{VERSION}}",
+                "tree",
+                "5d9d53b8edccbd00173ea28b",
+                "activity"
+              ]
+            },
+            "description": "API request to get tree activities"
+          },
+          "response": []
+        },
+        {
+          "name": "Single Tree Detail",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree/5d11880a99e2a500175a3a9c",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "tree", "5d11880a99e2a500175a3a9c"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "description": "### Tree APIs",
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Role",
+      "item": [
+        {
+          "name": "Add Role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/authorization/role",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "authorization", "role"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Role",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\":\"akshay.milmile@gmail.com\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/authorization/role",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "authorization", "role"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Moderators",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/authorization/mods",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "authorization", "mods"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Tree Group",
+      "item": [
+        {
+          "name": "Create A Tree Group",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "health",
+                  "value": "healthy",
+                  "type": "text"
+                },
+                {
+                  "key": "lat",
+                  "value": "{{testLat}}",
+                  "type": "text"
+                },
+                {
+                  "key": "lng",
+                  "value": "{{testLng}}",
+                  "type": "text"
+                },
+                {
+                  "key": "photo",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "plants",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree_group",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "tree_group"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Tree Groups",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree_group?lat=11.509787286789653&lng=79.81593704223631&radius=500000&health=poor",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "tree_group"],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "11.509787286789653"
+                },
+                {
+                  "key": "lng",
+                  "value": "79.81593704223631"
+                },
+                {
+                  "key": "radius",
+                  "value": "500000"
+                },
+                {
+                  "key": "health",
+                  "value": "poor"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tree Group Mod Action",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"deleteApprove\": true\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree_group/5d7ec1c83dd6e4fa8c3842ee/mod-action",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "{{VERSION}}",
+                "tree_group",
+                "5d7ec1c83dd6e4fa8c3842ee",
+                "mod-action"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Tree Group",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree_group/5d7ec1c83dd6e4fa8c3842ee",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "tree_group", "5d7ec1c83dd6e4fa8c3842ee"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Water Tree Group",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree_group/5d7ec1c83dd6e4fa8c3842ee/water",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "{{VERSION}}",
+                "tree_group",
+                "5d7ec1c83dd6e4fa8c3842ee",
+                "water"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create A Tree Group [Distribution]",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "health",
+                  "value": "healthy",
+                  "type": "text"
+                },
+                {
+                  "key": "lat",
+                  "value": "{{testLat}}",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "lng",
+                  "value": "{{testLng}}",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "photo",
+                  "type": "file",
+                  "src": []
+                },
+                {
+                  "key": "plants",
+                  "value": "3",
+                  "type": "text",
+                  "disabled": true
+                },
+                {
+                  "key": "distribution",
+                  "value": "single",
+                  "type": "text"
+                },
+                {
+                  "key": "trees",
+                  "value": "[{\"lat\":12,\"lng\":18}]",
+                  "type": "text"
+                },
+                {
+                  "key": "waterCycle",
+                  "value": "7",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree_group",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "tree_group"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Tree Group Clusters",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/tree_group/cluster?bbox=73.625379,18.388787,74.027583,18.710622&zoom=15",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "tree_group", "cluster"],
+              "query": [
+                {
+                  "key": "bbox",
+                  "value": "73.625379,18.388787,74.027583,18.710622"
+                },
+                {
+                  "key": "zoom",
+                  "value": "15"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Site",
+      "item": [
+        {
+          "name": "Create A Site",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "type",
+                  "value": "public",
+                  "type": "text"
+                },
+                {
+                  "key": "wateringNearBy",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "numberOfPlants",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "soilQuality",
+                  "value": "good",
+                  "type": "text"
+                },
+                {
+                  "key": "lat",
+                  "value": "{{testLat}}",
+                  "type": "text"
+                },
+                {
+                  "key": "lng",
+                  "value": "{{testLng}}",
+                  "type": "text"
+                },
+                {
+                  "key": "siteDisplayName",
+                  "value": "mandir ke baju",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/site",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "site"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Sites",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "text/plain",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/site?lat={{testLat}}&lng={{testLng}}&radius=500",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "site"],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "{{testLat}}"
+                },
+                {
+                  "key": "lng",
+                  "value": "{{testLng}}"
+                },
+                {
+                  "key": "radius",
+                  "value": "500"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Site",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/site/5d8f36f56cee7f038bb16fa8",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "site", "5d8f36f56cee7f038bb16fa8"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Site delete moderator action",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"deleteApprove\": true}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/site/5d8f36f56cee7f038bb16fa8/mod-action",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "{{VERSION}}",
+                "site",
+                "5d8f36f56cee7f038bb16fa8",
+                "mod-action"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update A Site",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "type",
+                  "value": "public",
+                  "type": "text"
+                },
+                {
+                  "key": "wateringNearBy",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "numberOfPlants",
+                  "value": "10",
+                  "type": "text"
+                },
+                {
+                  "key": "soilQuality",
+                  "value": "good",
+                  "type": "text"
+                },
+                {
+                  "key": "lat",
+                  "value": "{{testLat}}",
+                  "type": "text"
+                },
+                {
+                  "key": "lng",
+                  "value": "{{testLng}}",
+                  "type": "text"
+                },
+                {
+                  "key": "siteDisplayName",
+                  "value": "non moderator site  to be updated",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/site/5dc00bcbb0b8807eb98bc99a",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "site", "5dc00bcbb0b8807eb98bc99a"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "User Activity",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/user/jBBPAbf73AOFdvXXC4NU6BVhoOD2/activity",
+              "host": ["{{BASE_URL}}"],
+              "path": [
+                "{{VERSION}}",
+                "user",
+                "jBBPAbf73AOFdvXXC4NU6BVhoOD2",
+                "activity"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register FCM Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"fcmToken\":\"averylongfcmtokenofaregistreduserandhisdevice\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/user/notification/register",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "user", "notification", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deregister FCM Token",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"fcmToken\":\"averylongfcmtokenofaregistreduserandhisdevice\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/user/notification/deregister",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "user", "notification", "deregister"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Top Users",
+      "item": [
+        {
+          "name": "Top Users",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "x-id-token",
+                "value": "{{ID_TOKEN}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/{{VERSION}}/top-users?limit=10",
+              "host": ["{{BASE_URL}}"],
+              "path": ["{{VERSION}}", "top-users"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "protocolProfileBehavior": {}
+    },
+    {
+      "name": "Get Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\":\"nonmoderator@gmail.com\",\n    \"password\":\"password\",\n    \"returnSecureToken\":true\n}"
+        },
+        "url": {
+          "raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={{FIREBASE_API_KEY}}",
+          "protocol": "https",
+          "host": ["www", "googleapis", "com"],
+          "path": ["identitytoolkit", "v3", "relyingparty", "verifyPassword"],
+          "query": [
+            {
+              "key": "key",
+              "value": "{{FIREBASE_API_KEY}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "localhost:3000/v1/tree_group-isCoordinateExists",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"lat\": \"73.67859805002809\",\n\t\"lng\": \"18.572418575619338\",\n\t\"health\": \"healthy\",\n\t\"plants\": \"1\",\n\t\"isCoordinateExists\": true\n}"
+        },
+        "url": {
+          "raw": "localhost:3000/v1/tree_group",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["v1", "tree_group"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "[ALL DEVICES] Send a test notification",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{BASE_URL}}/{{VERSION}}/notify",
+          "host": ["{{BASE_URL}}"],
+          "path": ["{{VERSION}}", "notify"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "282f1dfc-b57a-4c28-91a6-3da3de76b9d2",
+        "type": "text/javascript",
+        "exec": [
+          "pm.sendRequest({",
+          "    url: 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=' + pm.variables.get(\"FIREBASE_API_KEY\"),",
+          "    method: 'POST',",
+          "    crossDomin: true,",
+          "    header:{",
+          "    \"Content-Type\": \"application/json\",",
+          "    \"Accept\": \"application/json\",",
+          "    \"cache-control\": \"no-cache\",",
+          "    \"Postman-Token\": \"7ae945b9-b429-4db7-859c-cf2da210deaf\"",
+          "    },",
+          "    body: {",
+          "        mode: 'raw',",
+          "        raw: JSON.stringify({",
+          "    \"email\":pm.variables.get(\"FIREBASE_USERNAME\"),",
+          "    \"password\":pm.variables.get(\"FIREBASE_PASSWORD\"),",
+          "    \"returnSecureToken\":true",
+          "})",
+          "    }",
+          "}, function (err, res) {",
+          "    console.log(res.json());",
+          "    const data = res.json();",
+          "    pm.variables.set(\"ID_TOKEN\", data.idToken);",
+          "    pm.request.headers.upsert({key:\"x-id-token\",value:data.idToken});",
+          "});",
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "da8a20ac-3c0d-4399-adc6-889c6526a3a5",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "1a7b86cd-ae68-4dab-8310-adcc9e60f754",
+      "key": "ID_TOKEN",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "id": "11315e42-ba29-47d2-877b-e50cb63be065",
+      "key": "FIREBASE_USERNAME",
+      "value": "murali_prajapati555@gmail.com",
+      "type": "string"
+    },
+    {
+      "id": "b8becf5f-1ac4-4c20-b2a2-38813a53c36d",
+      "key": "FIREBASE_PASSWORD",
+      "value": "password",
+      "type": "string"
+    },
+    {
+      "id": "cace983a-0a3e-41e2-93ee-c407f8c3807f",
+      "key": "FIREBASE_API_KEY",
+      "value": "AIzaSyD20hbjW0i5Yh5aT_rJL6dLDQ1oyX59ljo",
+      "type": "string"
+    },
+    {
+      "id": "99e02e4d-e4fd-43f7-9c95-d88f071e5f80",
+      "key": "FIREBASE_USERNAME_NON_MOD",
+      "value": "nonmoderator@gmail.com",
+      "type": "string"
+    }
+  ],
+  "protocolProfileBehavior": {}
 }
